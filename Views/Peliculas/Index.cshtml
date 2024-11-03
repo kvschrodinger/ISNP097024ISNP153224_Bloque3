@@ -1,0 +1,59 @@
+﻿@model IEnumerable<ISNP097024ISNP153224_Bloque3.Models.Pelicula>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<p>
+    <a asp-action="Create">Nueva Pelicula</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Titulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Autor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sipnosis)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Duracion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Clasificacion)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Autor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sipnosis)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Duracion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Clasificacion)
+            </td>
+            <td class="form-group text-center">
+                <a asp-action="Edit" class="btn btn-success"  asp-route-id="@item.IdPelicula">Editar</a> <br>
+                    <a asp-action="Details" class="btn btn-primary" asp-route-id="@item.IdPelicula">Detalles</a> <br>
+                <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.IdPelicula">Eliminar </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

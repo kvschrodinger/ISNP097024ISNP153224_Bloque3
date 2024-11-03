@@ -1,0 +1,52 @@
+﻿@model ISNP097024ISNP153224_Bloque3.Models.Pelicula
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Borrar registro de pelicula</h1>
+<br>
+<h3>Estas seguro que quieres borrar este registro?</h3>
+<div>
+    <h4>Pelicula</h4>
+    <br>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Autor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Autor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Sipnosis)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Sipnosis)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Duracion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Duracion)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Clasificacion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Clasificacion)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdPelicula" />
+        <input type="submit" value="Borrar registro" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-success">Regresar a la lista</a>
+    </form>
+</div>
